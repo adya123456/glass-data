@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run Glass_APP.py
+web: sh setup.sh && streamlit run Glass_APP.py
