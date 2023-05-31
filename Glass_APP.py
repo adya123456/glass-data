@@ -60,3 +60,6 @@ def prediction(model, ri,na,mg,al,si,k,ca,ba,fe):
 
 st.title("Glass Type predictor")
 st.sidebar.title("exploratry data analysis")
+if(st.sidebar.checkbox("Show Raw Data")):
+    st.subheader("Full dataset")
+    st.dataframe(glass_df)
