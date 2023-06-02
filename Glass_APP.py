@@ -124,7 +124,7 @@ if 'Histogram' in plot_types:
     plt.hist(glass_df[columns], bins = 'sturges', edgecolor = 'black')
     st.pyplot()
  
-if 'Boxplot' in plot_types:
+if 'Box Plot' in plot_types:
     st.subheader("boxplot")
     columns = st.sidebar.selectbox("Select the column to create its histogram",
                                   ('RI', 'Na', 'Mg', 'Al', 'Si', 'K', 'Ca', 'Ba', 'Fe'))
