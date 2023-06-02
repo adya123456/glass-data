@@ -155,6 +155,7 @@ if 'Correlation Heatmap' in plot_types:
     bottom, top = ax.get_ylim() # Getting the top and bottom margin limits.
     ax.set_ylim(bottom + 0.5, top - 0.5) # Increasing the bottom and decreasing the top margins respectively.
     st.pyplot()
+    
 if 'Pair Plot' in plot_types:
     st.subheader("Pair Plots")
     plt.figure(figsize = (15, 15))
