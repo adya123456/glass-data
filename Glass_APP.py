@@ -182,8 +182,7 @@ if classifier == 'Support Vector Machine':
     kernel_input = st.sidebar.radio("Kernel", ("linear", "rbf", "poly"))
     gamma_input = st. sidebar.number_input("Gamma", 1, 100, step = 1)
 
-    # If the user clicks 'Classify' button, perform prediction and display accuracy score and confusion matrix.
-    # This 'if' statement must be inside the above 'if' statement.
+ 
 if st.sidebar.button('Classify'):
      st.subheader("Support Vector Machine")
      svc_model = SVC(C = c_value, kernel = kernel_input, gamma = gamma_input)
@@ -200,9 +199,8 @@ if classifier == 'Random Forest Classifier':
     st.sidebar.subheader("Model Hyperparameters")
     n_estimators_input = st.sidebar.number_input("Number of trees in the forest", 100, 5000, step = 10)
     max_depth_input = st.sidebar.number_input("Maximum depth of the tree", 1, 100, step = 1)
-
-    # If the user clicks 'Classify' button, perform prediction and display accuracy score and confusion matrix.
-    # This 'if' statement must be inside the above 'if' statement. 
+    
+    
 if st.sidebar.button('Classify'):
         st.subheader("Random Forest Classifier")
         rf_clf = RandomForestClassifier(n_estimators = n_estimators_input, max_depth = max_depth_input, n_jobs = -1)
