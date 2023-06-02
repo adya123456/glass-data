@@ -139,3 +139,25 @@ if 'Count Plot' in plot_types:
     plt.figure(figsize = (12,6))
     sns.countplot(x = "GlassType", data = glass_df)
     st.pyplot()
+ 
+ if 'Pie Chart' in plot_types:
+    st.subheader("Pie Chart")
+    pie_data = glass_df['GlassType'].value_counts()
+    plt.figure(figsize = (5, 5))
+    plt.pie(pie_data, labels = pie_data.index, autopct = '%1.2f%%', 
+            startangle = 30, explode = np.linspace(.06, .16, 6))
+    st.pyplot()
+
+ if 'Correlation Heatmap' in plot_types:
+    st.subheader("Correlation Heatmap")
+    plt.figure(figsize = (10, 6))
+    ax = sns.heatmap(glass_df.corr(), annot = True) # Creating an object of seaborn axis and storing it in 'ax' variable
+    bottom, top = ax.get_ylim() # Getting the top and bottom margin limits.
+    ax.set_ylim(bottom + 0.5, top - 0.5) # Increasing the bottom and decreasing the top margins respectively.
+    st.pyplot()
+
+ if 'Pair Plot' in plot_types:
+    st.subheader("Pair Plots")
+    plt.figure(figsize = (15, 15))
+    sns.pairplot(glass_df)
+    st.pyplot()
