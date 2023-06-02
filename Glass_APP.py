@@ -5,14 +5,14 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 from sklearn.model_selection import train_test_split, GridSearchCV
-from sklearn.metrics import plot_confusion_matrix, plot_roc_curve, plot_precision_recall_curve
-from sklearn.metrics import precision_score, recall_score 
+from sklearn.metrics import plot_confusion_matrix
+ 
 
 # ML classifier Python modules
 from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
-
+ 
 # Loading the dataset.
 @st.cache()
 def load_data():
