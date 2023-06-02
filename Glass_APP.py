@@ -64,4 +64,4 @@ st.title("Glass Type predictor")
 st.sidebar.title("exploratry data analysis")
 if st.sidebar.checkbox("Show raw data"):
     st.subheader("Full Dataset")
-    st.dataframe(glass_df)
+    st.dataframe(df)
