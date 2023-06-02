@@ -75,3 +75,32 @@ for feature in features_list:
     plt.figure(figsize = (12, 6))
     sns.scatterplot(x = feature, y = 'GlassType', data = glass_df)
     st.pyplot()
+
+    
+    
+st.sidebar.subheader("Histogram")
+
+# Choosing features for histograms.
+hist_features = st.sidebar.multiselect("Select features to create histograms:", 
+                                            ('RI', 'Na', 'Mg', 'Al', 'Si', 'K', 'Ca', 'Ba', 'Fe'))
+# Create histograms.
+for feature in hist_features:
+    st.subheader(f"Histogram for {feature}")
+    plt.figure(figsize = (12, 6))
+    plt.hist(glass_df[feature], bins = 'sturges', edgecolor = 'black')
+    st.pyplot() 
+
+# Create box plots for all the columns.
+# Sidebar for box plots.
+st.sidebar.subheader("Box Plot")
+
+# Choosing columns for box plots.
+box_plot_cols = st.sidebar.multiselect("Select the columns to create box plots:",
+                                            ('RI', 'Na', 'Mg', 'Al', 'Si', 'K', 'Ca', 'Ba', 'Fe', 'GlassType'))
+
+# Create box plots.
+for col in box_plot_cols:
+    st.subheader(f"Box plot for {col}")
+    plt.figure(figsize = (12, 2))
+    sns.boxplot(glass_df[col])
+    st.pyplot() 
