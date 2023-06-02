@@ -114,3 +114,21 @@ st.sidebar.subheader("Visualisation Selector")
 
 plot_types = st.sidebar.multiselect("Select the charts or plots:", 
                                     ('Histogram', 'Box Plot', 'Count Plot', 'Pie Chart', 'Correlation Heatmap', 'Pair Plot'))
+if 'Histogram' in plot_types:
+    st.subheader("Histogram")
+    columns = st.sidebar.selectbox("Select the column to create its histogram",
+                                  ('RI', 'Na', 'Mg', 'Al', 'Si', 'K', 'Ca', 'Ba', 'Fe'))
+    # Note: Histogram is generally created for continous values not for discrete values.
+    plt.figure(figsize = (12, 6))
+    plt.title(f"Histogram for {columns}")
+    plt.hist(glass_df[columns], bins = 'sturges', edgecolor = 'black')
+    st.pyplot()
+ 
+ if 'Boxplot' in plot_types:
+  st.subheader("boxplot")
+  columns = st.sidebar.selectbox("Select the column to create its histogram",
+                                  ('RI', 'Na', 'Mg', 'Al', 'Si', 'K', 'Ca', 'Ba', 'Fe'))
+  plt.figure(figsize = (12,6))
+  plt.title(f"boxplot for {columns}")
+  sns.boxplot(glass_df[columns])
+  st.pyplot()
