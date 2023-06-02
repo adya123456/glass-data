@@ -202,12 +202,12 @@ if classifier == 'Random Forest Classifier':
     
     
 if st.sidebar.button('Classify'):
-        st.subheader("Random Forest Classifier")
-        rf_clf = RandomForestClassifier(n_estimators = n_estimators_input, max_depth = max_depth_input, n_jobs = -1)
-        rf_clf.fit(X_train,y_train)
-        accuracy = rf_clf.score(X_test, y_test)
-        glass_type = prediction(rf_clf, ri, na, mg, al, si, k, ca, ba, fe)
-        st.write("The Type of glass predicted is:", glass_type)
-        st.write("Accuracy", accuracy.round(2))
-        plot_confusion_matrix(rf_clf, X_test, y_test)
-        st.pyplot()
+    st.subheader("Random Forest Classifier")
+    rf_clf = RandomForestClassifier(n_estimators = n_estimators_input, max_depth = max_depth_input, n_jobs = -1)
+    rf_clf.fit(X_train,y_train)
+    accuracy = rf_clf.score(X_test, y_test)
+    glass_type = prediction(rf_clf, ri, na, mg, al, si, k, ca, ba, fe)
+    st.write("The Type of glass predicted is:", glass_type)
+    st.write("Accuracy", accuracy.round(2))
+    plot_confusion_matrix(rf_clf, X_test, y_test)
+    st.pyplot()
