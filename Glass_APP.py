@@ -105,21 +105,10 @@ for col in box_plot_cols:
     sns.boxplot(glass_df[col])
     st.pyplot() 
     
-# Sidebar subheader for scatter plot
-st.sidebar.subheader("Scatter Plot")
 
 # Remove deprecation warning.
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
-# Choosing x-axis values for scatter plots.
-features_list = st.sidebar.multiselect("Select the x-axis values:", 
-                                        ('RI', 'Na', 'Mg', 'Al', 'Si', 'K', 'Ca', 'Ba', 'Fe'))
-# Creating scatter plots.
-for feature in features_list:
-    st.subheader(f"Scatter plot between {feature} and GlassType")
-    plt.figure(figsize = (12, 6))
-    sns.scatterplot(x = feature, y = 'GlassType', data = glass_df)
-    st.pyplot()
 
 st.sidebar.subheader("Visualisation Selector")
 
