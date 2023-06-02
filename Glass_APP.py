@@ -64,7 +64,6 @@ st.title("Glass Type predictor")
 st.sidebar.title("exploratry data analysis")
 if st.sidebar.checkbox("Show raw data"):
     st.subheader("Full Dataset")
-    st.dataframe(df)
    
 st.sidebar.subheader("Scatter Plot")
 features_list = st.sidebar.multiselect("Select the x-axis values:", 
