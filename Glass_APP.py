@@ -105,7 +105,6 @@ for col in box_plot_cols:
     sns.boxplot(glass_df[col])
     st.pyplot() 
     
-# S1.1: Remove the multiselect widgets for histograms and box plots and add a new multiselect widget to choose a type of visualisation.
 # Sidebar subheader for scatter plot
 st.sidebar.subheader("Scatter Plot")
 
@@ -122,13 +121,7 @@ for feature in features_list:
     sns.scatterplot(x = feature, y = 'GlassType', data = glass_df)
     st.pyplot()
 
-# Remove the code blocks for histogram and box plots.
-
-# Add a subheader in the sidebar with label "Visualisation Selector"
 st.sidebar.subheader("Visualisation Selector")
 
-# Add a multiselect in the sidebar with label 'Select the Charts/Plots:'
-# and with 6 options passed as a tuple ('Histogram', 'Box Plot', 'Count Plot', 'Pie Chart', 'Correlation Heatmap', 'Pair Plot').
-# Store the current value of this widget in a variable 'plot_types'.
 plot_types = st.sidebar.multiselect("Select the charts or plots:", 
                                     ('Histogram', 'Box Plot', 'Count Plot', 'Pie Chart', 'Correlation Heatmap', 'Pair Plot'))
